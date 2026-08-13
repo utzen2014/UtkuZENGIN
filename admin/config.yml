@@ -2,8 +2,6 @@ backend:
   name: github
   repo: utzen2014/UtkuZENGIN
   branch: main
-  base_url: https://decap-cms-oauth-provider.vercel.app
-  auth_endpoint: /auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -16,6 +14,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Tarih", name: "date", widget: "datetime" }
-      - { label: "Özet / Açıklama", name: "description", widget: "text" }
+      - { label: "Tarih", name: "datetime", widget: "datetime" }
+      - { label: "Özet / Açıklama", name: "description", widget: "string" }
       - { label: "İçerik", name: "body", widget: "markdown" }
