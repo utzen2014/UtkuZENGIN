@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main # Depondaki ana dal adı (main veya master)
+  name: github
+  repo: utzen2014/UtkuZENGIN
+  branch: main
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -13,6 +14,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime" }
+      - { label: "Tarih", name: "date", widget: "datetime" }
       - { label: "Özet / Açıklama", name: "description", widget: "text" }
       - { label: "İçerik", name: "body", widget: "markdown" }
