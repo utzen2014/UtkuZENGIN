@@ -6,7 +6,12 @@
     <title>Blog Yönetim Paneli</title>
   </head>
   <body>
-    <!-- Decap CMS Scripti -->
+    <!-- Decap CMS ve Otomatik GitHub OAuth Bağlantısı -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      CMS.registerBackend('github', {
+        auth_endpoint: 'https://decap-cms-oauth-provider.vercel.app/auth'
+      });
+    </script>
   </body>
 </html>
