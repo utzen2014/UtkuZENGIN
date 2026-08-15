@@ -180,6 +180,20 @@
   }
   .icon-btn:hover{border-color:var(--accent);color:var(--accent);}
   .icon-btn svg{width:18px;height:18px;}
+  .icon-wrap{position:relative;display:inline-flex;}
+  .notif-badge{
+    position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;padding:0 4px;
+    background:var(--danger);color:#fff;border-radius:9px;font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;font-weight:700;display:none;align-items:center;justify-content:center;
+    cursor:pointer;border:2px solid var(--bg);
+  }
+  .reply-list{margin:10px 0 0 18px;padding-left:14px;border-left:2px solid var(--border);display:flex;flex-direction:column;gap:8px;}
+  .reply-item{padding:2px 0;}
+  .reply-toggle{
+    background:none;border:none;color:var(--accent);font-size:12px;font-family:'JetBrains Mono',monospace;
+    cursor:pointer;padding:0;margin-top:6px;
+  }
+  .reply-form{margin:10px 0 0 18px;display:flex;flex-direction:column;gap:8px;}
   .post-list{display:flex;flex-direction:column;gap:14px;}
   .post-card{
     background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;
@@ -218,6 +232,8 @@
   .like-btn svg{width:15px;height:15px;}
   .like-btn.liked{border-color:var(--danger);color:var(--danger);}
   .like-btn.liked svg{fill:var(--danger);stroke:var(--danger);}
+  .like-btn svg{transition:transform .18s ease;}
+  .like-btn.pulse svg{transform:scale(1.35);}
   .like-names{font-size:12px;color:var(--muted);cursor:pointer;text-decoration:underline dotted;}
   .comments-section{margin-top:20px;padding-top:16px;border-top:1px dashed var(--border);}
   .comment-item{padding:10px 0;border-bottom:1px solid var(--border);}
@@ -312,7 +328,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#top" class="logo"><span class="logo-mark">UZ</span> Utku ZENGİN</a>
+    <a href="#top" class="logo"><span class="logo-mark">AS</span> Adınız Soyadınız</a>
     <nav class="links">
       <a href="#hakkimda">Hakkımda</a>
       <a href="#baglantilar">Bağlantılar</a>
@@ -355,7 +371,7 @@
         <h2 class="section-title">Biyografi</h2>
         <div class="bio">
           <!-- DÜZENLE: gerçek biyografinizi buraya yazın -->
-          <p>Meraklı ve başarılı bir öğrenci ayrıca üretken bir geliştiriciyim. Karmaşık problemleri sade, kullanılabilir çözümlere dönüştürmekten keyif alıyorum. Kariyerim boyunca farklı ölçekte projelerde çalıştım; küçük araçlardan uçtan uca ürünlere kadar.</p>
+          <p>Meraklı bir öğrenici ve üretken bir geliştiriciyim. Karmaşık problemleri sade, kullanılabilir çözümlere dönüştürmekten keyif alıyorum. Kariyerim boyunca farklı ölçekte projelerde çalıştım; küçük araçlardan uçtan uca ürünlere kadar.</p>
           <p>Boş zamanlarımda yeni teknolojiler deniyor, açık kaynak projelere katkı sağlıyor ve öğrendiklerimi bu blogda paylaşıyorum.</p>
         </div>
       </div>
@@ -384,15 +400,15 @@
         <!-- DÜZENLE: her href değerini kendi profil adresinizle değiştirin -->
         <a class="link-card" href="https://github.com/utzen2014" target="_blank" rel="noopener">
           <span class="link-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.79-4.57 5.04.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></span>
-          <span class="link-text"><span class="lt-name">GitHub</span><br><span class="lt-sub">@utzen2014</span></span>
+          <span class="link-text"><span class="lt-name">GitHub</span><br><span class="lt-sub">@kullaniciadi</span></span>
         </a>
         <a class="link-card" href="https://tr.wikipedia.org/wiki/Utku_ZENGİN2529" target="_blank" rel="noopener">
           <span class="link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z"/></svg></span>
-          <span class="link-text"><span class="lt-name">Wikipedia</span><br><span class="lt-sub">Utku ZENGİN2529</span></span>
+          <span class="link-text"><span class="lt-name">Wikipedia</span><br><span class="lt-sub">Sayfa adı</span></span>
         </a>
         <a class="link-card" href="mailto:utzen2014@gmail.com">
           <span class="link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-          <span class="link-text"><span class="lt-name">E-posta</span><br><span class="lt-sub">utzen2014@gmail.com</span></span>
+          <span class="link-text"><span class="lt-name">E-posta</span><br><span class="lt-sub">isim@ornek.com</span></span>
         </a>
       </div>
     </div>
@@ -406,12 +422,18 @@
           <h2 class="section-title" style="margin-bottom:0;">Blog</h2>
         </div>
         <div class="admin-controls">
+          <button class="icon-btn" id="bulkDeleteBtn" style="display:none;" aria-label="Seçilenleri sil" title="Seçilenleri sil">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0-1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 6h16Z"/></svg>
+          </button>
           <button class="icon-btn" id="newPostBtn" style="display:none;" aria-label="Yeni yazı" title="Yeni yazı">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </button>
-          <button class="icon-btn" id="lockBtn" aria-label="Yönetici girişi" title="Yönetici girişi">
-            <svg id="lockIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
-          </button>
+          <div class="icon-wrap">
+            <button class="icon-btn" id="lockBtn" aria-label="Yönetici girişi" title="Yönetici girişi">
+              <svg id="lockIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg>
+            </button>
+            <span class="notif-badge" id="notifBadge" title="Yeni etkileşimler — okundu işaretlemek için tıklayın">0</span>
+          </div>
         </div>
       </div>
       <div class="filter-row" id="filterRow"></div>
@@ -422,7 +444,7 @@
 
 <footer>
   <div class="wrap">
-    © <span id="year"></span> Utku ZENGİN — Tüm hakları saklıdır.
+    © <span id="year"></span> Utku ZENGİN — bu site kendi imzasıyla el yapımıdır.
     <div class="visit-counter">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
       <span id="visitCount">—</span> ziyaretçi
@@ -533,7 +555,7 @@
       date: new Date(Date.now() - 86400000*3).toISOString()
     },
     'seed-1': {
-      title: 'Merhaba',
+      title: 'Merhaba dünya',
       excerpt: 'İlk yazı — bu blogda neler paylaşacağıma dair kısa bir giriş.',
       content: 'Burada öğrendiklerimi, üzerinde çalıştığım projeleri ve zaman zaman düşüncelerimi paylaşacağım.\n\nBu metni kendi ilk yazınızla değiştirebilirsiniz.',
       date: new Date(Date.now() - 86400000*7).toISOString()
@@ -554,9 +576,39 @@
   const emailInput = document.getElementById('emailInput');
   const pwInput = document.getElementById('pwInput');
   const pwError = document.getElementById('pwError');
+  const notifBadge = document.getElementById('notifBadge');
 
   function openLogin(){ loginOverlay.classList.add('show'); pwError.style.display='none'; pwInput.value=''; emailInput.value=''; setTimeout(()=>emailInput.focus(),50); }
   function closeLogin(){ loginOverlay.classList.remove('show'); }
+
+  /* ---------- BİLDİRİM ROZETİ (yeni yorum/beğeni/yanıt sayısı) ---------- */
+  const lastSeenRef = db.ref('admin/lastSeen');
+  let lastSeenValue = Date.now();
+
+  function computeNotifCount(){
+    if(!isAdmin) return 0;
+    let count = 0;
+    Object.values(currentPosts).forEach(function(p){
+      Object.values(p.likes || {}).forEach(function(l){ if(new Date(l.date).getTime() > lastSeenValue) count++; });
+      Object.values(p.comments || {}).forEach(function(c){
+        if(new Date(c.date).getTime() > lastSeenValue) count++;
+        Object.values(c.replies || {}).forEach(function(r){ if(new Date(r.date).getTime() > lastSeenValue) count++; });
+      });
+    });
+    return count;
+  }
+  function updateNotifBadge(){
+    const n = computeNotifCount();
+    if(isAdmin && n > 0){ notifBadge.textContent = n > 99 ? '99+' : n; notifBadge.style.display = 'flex'; }
+    else { notifBadge.style.display = 'none'; }
+  }
+  notifBadge.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(!isAdmin) return;
+    lastSeenValue = Date.now();
+    lastSeenRef.set(lastSeenValue);
+    updateNotifBadge();
+  });
 
   auth.onAuthStateChanged(function(user){
     isAdmin = !!user;
@@ -564,12 +616,23 @@
       ? '<rect x="4" y="10" width="16" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 8.6-3.4"/>'
       : '<rect x="4" y="10" width="16" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/>';
     newPostBtn.style.display = isAdmin ? 'flex' : 'none';
+    if(isAdmin){
+      lastSeenRef.once('value').then(function(snap){
+        lastSeenValue = snap.val() || 0;
+        updateNotifBadge();
+      });
+    } else {
+      notifBadge.style.display = 'none';
+    }
     render();
   });
 
   lockBtn.addEventListener('click', function(){
-    if(isAdmin){ auth.signOut(); }
-    else{ openLogin(); }
+    if(isAdmin){
+      lastSeenRef.set(Date.now()).finally(function(){ auth.signOut(); });
+    } else {
+      openLogin();
+    }
   });
   document.getElementById('loginCancel').addEventListener('click', closeLogin);
   document.getElementById('loginConfirm').addEventListener('click', tryLogin);
@@ -669,8 +732,32 @@
   function getVisitorName(){
     if(visitorName) return visitorName;
     const n = prompt('Adınızı girer misiniz? (yorum/beğenide görünecek)');
-    if(n && n.trim()) visitorName = n.trim();
+    if(n && n.trim()) visitorName = n.trim().slice(0, MAX_NAME_LEN);
     return visitorName;
+  }
+
+  /* ---------- SPAM / KÜFÜR KORUMASI ---------- */
+  const MAX_NAME_LEN = 40;
+  const MAX_COMMENT_LEN = 500;
+  const COMMENT_COOLDOWN_MS = 12000; // aynı ziyaretçi art arda en az 12 sn beklemeli
+  let lastCommentAt = 0;
+
+  const BANNED_WORDS = [
+    'amk','amq','aq','sik','sikik','siktir','yarrak','yarak','piç','pic','orospu','oç','oc',
+    'göt','got','ibne','şerefsiz','serefsiz','pezevenk','kahpe','gerizekalı','gerizekali',
+    'salak','aptal','mal herif','fuck','shit','bitch','asshole','bastard','dick','pussy','cunt'
+  ];
+
+  function normalizeForFilter(str){
+    return str
+      .toLocaleLowerCase('tr')
+      .replace(/[0-9]/g, function(d){ return ({'0':'o','1':'i','3':'e','4':'a','5':'s','7':'t'})[d] || d; })
+      .replace(/[^a-zçğıöşü\s]/g, '')
+      .replace(/\s+/g, ' ');
+  }
+  function containsBannedWord(str){
+    const norm = normalizeForFilter(str);
+    return BANNED_WORDS.some(function(w){ return norm.indexOf(w) !== -1; });
   }
 
   /* ---------- ZİYARETÇİ SAYACI ---------- */
@@ -754,32 +841,82 @@
             '<div class="eyebrow" style="margin-bottom:12px;">Yorumlar (' + commentIds.length + ')</div>' +
             commentIds.map(function(cid){
               const c = comments[cid];
-              return '<div class="comment-item"><span class="comment-name">'+escapeHtml(c.name)+'</span><span class="comment-date">'+fmtDateTime(c.date)+'</span><p class="comment-text">'+escapeHtml(c.text)+'</p></div>';
+              const replies = c.replies || {};
+              const replyIds = Object.keys(replies).sort(function(a,b){ return new Date(replies[a].date) - new Date(replies[b].date); });
+              return '<div class="comment-item">' +
+                '<span class="comment-name">'+escapeHtml(c.name)+'</span>' +
+                '<span class="comment-date">'+fmtDateTime(c.date)+'</span>' +
+                (isAdmin ? '<button class="post-del comment-del" data-post="'+id+'" data-comment="'+cid+'" style="float:right;">Sil</button>' +
+                           '<button class="post-edit comment-edit-toggle" data-post="'+id+'" data-comment="'+cid+'" style="float:right;margin-right:10px;">Düzenle</button>' : '') +
+                '<p class="comment-text" data-post="'+id+'" data-comment="'+cid+'">'+escapeHtml(c.text)+'</p>' +
+                (isAdmin ? '<div class="comment-edit-form" data-post="'+id+'" data-comment="'+cid+'" style="display:none;">' +
+                  '<textarea class="commentEditText" maxlength="500" data-post="'+id+'" data-comment="'+cid+'">'+escapeHtml(c.text)+'</textarea>' +
+                  '<p class="error-msg commentEditError" data-post="'+id+'" data-comment="'+cid+'" style="margin:4px 0 0;"></p>' +
+                  '<div style="display:flex;gap:8px;margin-top:8px;">' +
+                    '<button class="btn btn-primary btn-sm commentEditSave" data-post="'+id+'" data-comment="'+cid+'">Kaydet</button>' +
+                    '<button class="btn btn-ghost btn-sm commentEditCancel" data-post="'+id+'" data-comment="'+cid+'">Vazgeç</button>' +
+                  '</div>' +
+                '</div>' : '') +
+                (replyIds.length ? '<div class="reply-list">' + replyIds.map(function(rid){
+                  const r = replies[rid];
+                  return '<div class="reply-item">' +
+                    '<span class="comment-name">'+escapeHtml(r.name)+'</span>' +
+                    '<span class="comment-date">'+fmtDateTime(r.date)+'</span>' +
+                    (isAdmin ? '<button class="post-del reply-del" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'" style="float:right;">Sil</button>' +
+                               '<button class="post-edit reply-edit-toggle" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'" style="float:right;margin-right:10px;">Düzenle</button>' : '') +
+                    '<p class="comment-text">'+escapeHtml(r.text)+'</p>' +
+                    (isAdmin ? '<div class="reply-edit-form" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'" style="display:none;">' +
+                      '<textarea class="replyEditText" maxlength="500" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'">'+escapeHtml(r.text)+'</textarea>' +
+                      '<p class="error-msg replyEditError" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'" style="margin:4px 0 0;"></p>' +
+                      '<div style="display:flex;gap:8px;margin-top:8px;">' +
+                        '<button class="btn btn-primary btn-sm replyEditSave" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'">Kaydet</button>' +
+                        '<button class="btn btn-ghost btn-sm replyEditCancel" data-post="'+id+'" data-comment="'+cid+'" data-reply="'+rid+'">Vazgeç</button>' +
+                      '</div>' +
+                    '</div>' : '') +
+                  '</div>';
+                }).join('') + '</div>' : '') +
+                '<button class="reply-toggle" data-post="'+id+'" data-comment="'+cid+'">Yanıtla</button>' +
+                '<div class="reply-form" data-post="'+id+'" data-comment="'+cid+'" style="display:none;">' +
+                  '<input type="text" class="replyName" placeholder="Adınız" maxlength="40" data-post="'+id+'" data-comment="'+cid+'">' +
+                  '<textarea class="replyText" placeholder="Yanıtınız..." maxlength="500" data-post="'+id+'" data-comment="'+cid+'"></textarea>' +
+                  '<p class="error-msg replyError" data-post="'+id+'" data-comment="'+cid+'" style="margin:0;"></p>' +
+                  '<button class="btn btn-primary btn-sm replySubmit" data-post="'+id+'" data-comment="'+cid+'" style="align-self:flex-start;">Gönder</button>' +
+                '</div>' +
+              '</div>';
             }).join('') +
             '<div class="comment-form">' +
-              '<input type="text" class="commentName" placeholder="Adınız" data-id="'+id+'">' +
-              '<textarea class="commentText" placeholder="Yorumunuz..." data-id="'+id+'"></textarea>' +
+              '<input type="text" class="commentName" placeholder="Adınız" maxlength="40" data-id="'+id+'">' +
+              '<textarea class="commentText" placeholder="Yorumunuz..." maxlength="500" data-id="'+id+'"></textarea>' +
+              '<p class="error-msg commentError" data-id="'+id+'" style="margin:0;"></p>' +
               '<button class="btn btn-primary btn-sm commentSubmit" data-id="'+id+'" style="align-self:flex-start;">Gönder</button>' +
             '</div>' +
           '</div>' +
         '</div>';
       card.addEventListener('click', function(e){
         const t = e.target;
-        if(t.closest('.post-del') || t.closest('.post-edit') || t.closest('.like-btn') || t.closest('.like-names') || t.closest('.comment-form')) return;
+        if(t.closest('.post-del') || t.closest('.post-edit') || t.closest('.like-btn') || t.closest('.like-names') || t.closest('.comment-form') || t.closest('.reply-form') || t.closest('.reply-toggle') || t.closest('.comment-del') || t.closest('.reply-del') || t.closest('.comment-edit-toggle') || t.closest('.comment-edit-form') || t.closest('.reply-edit-toggle') || t.closest('.reply-edit-form')) return;
         card.classList.toggle('open');
       });
       postList.appendChild(card);
     });
+    updateNotifBadge();
+
 
     postList.querySelectorAll('.like-btn').forEach(function(btn){
       btn.addEventListener('click', function(e){
         e.stopPropagation();
         const id = btn.getAttribute('data-id');
-        if(likedThisSession[id]) return;
-        const name = getVisitorName();
-        if(!name) return;
-        postsRef.child(id).child('likes').push({ name: name, date: new Date().toISOString() });
-        likedThisSession[id] = true;
+        btn.classList.add('pulse');
+        setTimeout(function(){ btn.classList.remove('pulse'); }, 220);
+        if(likedThisSession[id]){
+          postsRef.child(id).child('likes').child(likedThisSession[id]).remove();
+          delete likedThisSession[id];
+        } else {
+          const name = getVisitorName();
+          if(!name) return;
+          const ref = postsRef.child(id).child('likes').push({ name: name, date: new Date().toISOString() });
+          likedThisSession[id] = ref.key;
+        }
       });
     });
     postList.querySelectorAll('.like-names').forEach(function(el){
@@ -797,14 +934,154 @@
         const card = btn.closest('.post-card');
         const nameInput = card.querySelector('.commentName[data-id="'+id+'"]');
         const textInput = card.querySelector('.commentText[data-id="'+id+'"]');
-        const name = nameInput.value.trim();
-        const text = textInput.value.trim();
-        if(!name || !text) return;
+        const errorEl = card.querySelector('.commentError[data-id="'+id+'"]');
+        const name = nameInput.value.trim().slice(0, MAX_NAME_LEN);
+        const text = textInput.value.trim().slice(0, MAX_COMMENT_LEN);
+        errorEl.style.display = 'none';
+
+        function showError(msg){ errorEl.textContent = msg; errorEl.style.display = 'block'; }
+
+        if(!name || !text){ showError('Ad ve yorum alanlarını doldurun.'); return; }
+        if(Date.now() - lastCommentAt < COMMENT_COOLDOWN_MS){
+          showError('Çok hızlı yorum gönderiyorsunuz, birkaç saniye sonra tekrar deneyin.');
+          return;
+        }
+        if(containsBannedWord(name) || containsBannedWord(text)){
+          showError('Yorumunuz uygunsuz içerik barındırıyor gibi görünüyor, lütfen düzenleyin.');
+          return;
+        }
+
+        lastCommentAt = Date.now();
         postsRef.child(id).child('comments').push({ name: name, text: text, date: new Date().toISOString() });
         nameInput.value = '';
         textInput.value = '';
       });
     });
+    postList.querySelectorAll('.comment-del').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        postsRef.child(postId).child('comments').child(commentId).remove();
+      });
+    });
+    postList.querySelectorAll('.reply-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const form = postList.querySelector('.reply-form[data-post="'+postId+'"][data-comment="'+commentId+'"]');
+        form.style.display = form.style.display === 'none' ? 'flex' : 'none';
+        if(form.style.display === 'flex') form.querySelector('.replyName').focus();
+      });
+    });
+    postList.querySelectorAll('.replySubmit').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const form = btn.closest('.reply-form');
+        const nameInput = form.querySelector('.replyName');
+        const textInput = form.querySelector('.replyText');
+        const errorEl = form.querySelector('.replyError');
+        const name = nameInput.value.trim().slice(0, MAX_NAME_LEN);
+        const text = textInput.value.trim().slice(0, MAX_COMMENT_LEN);
+        errorEl.style.display = 'none';
+        function showError(msg){ errorEl.textContent = msg; errorEl.style.display = 'block'; }
+
+        if(!name || !text){ showError('Ad ve yanıt alanlarını doldurun.'); return; }
+        if(Date.now() - lastCommentAt < COMMENT_COOLDOWN_MS){
+          showError('Çok hızlı gönderiyorsunuz, birkaç saniye sonra tekrar deneyin.');
+          return;
+        }
+        if(containsBannedWord(name) || containsBannedWord(text)){
+          showError('Yanıtınız uygunsuz içerik barındırıyor gibi görünüyor, lütfen düzenleyin.');
+          return;
+        }
+
+        lastCommentAt = Date.now();
+        postsRef.child(postId).child('comments').child(commentId).child('replies').push({ name: name, text: text, date: new Date().toISOString() });
+        nameInput.value = '';
+        textInput.value = '';
+        form.style.display = 'none';
+      });
+    });
+    postList.querySelectorAll('.reply-del').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const replyId = btn.getAttribute('data-reply');
+        postsRef.child(postId).child('comments').child(commentId).child('replies').child(replyId).remove();
+      });
+    });
+
+    /* ---- yorum düzenleme (sadece admin) ---- */
+    postList.querySelectorAll('.comment-edit-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const form = postList.querySelector('.comment-edit-form[data-post="'+postId+'"][data-comment="'+commentId+'"]');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+    postList.querySelectorAll('.commentEditCancel').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        btn.closest('.comment-edit-form').style.display = 'none';
+      });
+    });
+    postList.querySelectorAll('.commentEditSave').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const form = btn.closest('.comment-edit-form');
+        const textarea = form.querySelector('.commentEditText');
+        const errorEl = form.querySelector('.commentEditError');
+        const text = textarea.value.trim().slice(0, MAX_COMMENT_LEN);
+        if(!text){ errorEl.textContent = 'Yorum boş olamaz.'; errorEl.style.display = 'block'; return; }
+        postsRef.child(postId).child('comments').child(commentId).update({ text: text })
+          .then(function(){ form.style.display = 'none'; })
+          .catch(function(err){ errorEl.textContent = 'Kaydedilemedi: ' + err.message; errorEl.style.display = 'block'; });
+      });
+    });
+
+    /* ---- yanıt düzenleme (sadece admin) ---- */
+    postList.querySelectorAll('.reply-edit-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const replyId = btn.getAttribute('data-reply');
+        const form = postList.querySelector('.reply-edit-form[data-post="'+postId+'"][data-comment="'+commentId+'"][data-reply="'+replyId+'"]');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+    postList.querySelectorAll('.replyEditCancel').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        btn.closest('.reply-edit-form').style.display = 'none';
+      });
+    });
+    postList.querySelectorAll('.replyEditSave').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        const postId = btn.getAttribute('data-post');
+        const commentId = btn.getAttribute('data-comment');
+        const replyId = btn.getAttribute('data-reply');
+        const form = btn.closest('.reply-edit-form');
+        const textarea = form.querySelector('.replyEditText');
+        const errorEl = form.querySelector('.replyEditError');
+        const text = textarea.value.trim().slice(0, MAX_COMMENT_LEN);
+        if(!text){ errorEl.textContent = 'Yanıt boş olamaz.'; errorEl.style.display = 'block'; return; }
+        postsRef.child(postId).child('comments').child(commentId).child('replies').child(replyId).update({ text: text })
+          .then(function(){ form.style.display = 'none'; })
+          .catch(function(err){ errorEl.textContent = 'Kaydedilemedi: ' + err.message; errorEl.style.display = 'block'; });
+      });
+    });
+
     if(isAdmin){
       postList.querySelectorAll('.post-del').forEach(function(btn){
         btn.addEventListener('click', function(e){
