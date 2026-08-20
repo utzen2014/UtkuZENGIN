@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utku ZENGİN</title>
+<meta name="description" content="Utku ZENGİN — kişisel site">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ TOP NAV ============ -->
+<nav class="topnav">
+  <div class="brand">
+    <a href="#home" class="mark" data-route="home" title="Anasayfa">UZ</a>
+    <a href="#about" class="brand-name" data-route="about">Utku ZENGİN</a>
+  </div>
+  <div class="navlinks">
+    <a href="#about" class="link-btn" data-route="about">Hakkımda</a>
+    <a href="#blog" class="link-btn" data-route="blog">Blog</a>
+    <a href="#projects" class="link-btn" data-route="projects">Projeler</a>
+  </div>
+</nav>
+
+<!-- ============ HOME ============ -->
+<section id="view-home" class="view">
+  <div class="epigraph-wrap">
+    <h1 class="epigraph">
+      Mantıktan ayrıldığın an
+      <span class="l2">bir ölüden farkın kalmaz.</span>
+    </h1>
+    <div class="epigraph-sign"><span>Utku ZENGİN</span></div>
+    <div class="home-rule"></div>
+    <div class="home-meta">bu satır koddan düzenlenir — index.html içindeki #view-home bölümü</div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="view-about" class="view">
+  <div class="section-eyebrow">001 — Hakkımda</div>
+  <h2 class="section-title">Merhaba.</h2>
+  <div class="section-rule"></div>
+
+  <div class="about-grid">
+    <div class="profile-photo">
+      <img src="assets/profile.jpg" alt="Utku Zengin" id="profile-img">
+    </div>
+    <div class="bio" id="bio-text">
+      <p>
+        Burası biyografi metni için ayrılmıştır. Bu paragrafı <code>index.html</code>
+        dosyasındaki <code>#bio-text</code> bloğunu düzenleyerek kendi hikayenle
+        değiştirebilirsin. Profil fotoğrafını değiştirmek için
+        <code>assets/</code> klasörüne kendi fotoğrafını ekleyip
+        <code>#profile-img</code> etiketinin <code>src</code> değerini güncelle.
+      </p>
+      <p>
+        İkinci paragraf — ilgi alanların, üzerinde çalıştığın şeyler ya da
+        kendini nasıl tanımladığın hakkında birkaç cümle daha ekleyebilirsin.
+      </p>
+    </div>
+  </div>
+
+  <div class="connections">
+    <div class="connections-label">Bağlantılar</div>
+    <div class="connections-grid">
+      <a class="connection-box" href="https://tr.wikipedia.org" target="_blank" rel="noopener">
+        <div class="connection-platform">Wikipedia</div>
+        <div class="connection-handle">kullanıcı-adı</div>
+      </a>
+      <a class="connection-box" href="https://github.com/" target="_blank" rel="noopener">
+        <div class="connection-platform">GitHub</div>
+        <div class="connection-handle">kullanıcı-adı</div>
+      </a>
+      <a class="connection-box" href="mailto:ornek@eposta.com">
+        <div class="connection-platform">E-posta</div>
+        <div class="connection-handle">ornek@eposta.com</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG (list) ============ -->
+<section id="view-blog" class="view">
+  <div class="section-eyebrow">002 — Blog</div>
+  <h2 class="section-title">Yazılar.</h2>
+  <div class="section-rule"></div>
+
+  <div class="lock-bar">
+    <button class="lock-toggle" id="blog-lock-btn"><span class="icon">🔒</span> <span id="blog-lock-label">Kilitli</span></button>
+    <button class="add-btn" id="blog-add-btn">+ Yazı ekle</button>
+  </div>
+
+  <div class="login-form" id="blog-login-form">
+    <input type="email" id="blog-login-email" placeholder="e-posta" autocomplete="username">
+    <input type="password" id="blog-login-pass" placeholder="şifre" autocomplete="current-password">
+    <button class="link-btn accent" id="blog-login-submit">Giriş yap</button>
+    <button class="link-btn" id="blog-login-cancel">Vazgeç</button>
+    <span class="form-error" id="blog-login-error">E-posta veya şifre hatalı.</span>
+  </div>
+
+  <div class="tag-filters" id="blog-tag-filters">
+    <button class="tag-tab active" data-tag="all">Tümü</button>
+  </div>
+
+  <div class="post-list" id="blog-post-list">
+    <div class="empty-state">Yazılar yükleniyor…</div>
+  </div>
+</section>
+
+<!-- ============ BLOG (post detail) ============ -->
+<section id="view-post" class="view">
+  <div class="post-detail" id="post-detail-body">
+    <!-- filled dynamically -->
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="view-projects" class="view">
+  <div class="section-eyebrow">003 — Projeler</div>
+  <h2 class="section-title">Projeler.</h2>
+  <div class="section-rule"></div>
+
+  <div class="lock-bar">
+    <button class="lock-toggle" id="proj-lock-btn"><span class="icon">🔒</span> <span id="proj-lock-label">Kilitli</span></button>
+    <button class="add-btn" id="proj-add-btn">+ Proje ekle</button>
+  </div>
+
+  <div class="login-form" id="proj-login-form">
+    <input type="email" id="proj-login-email" placeholder="e-posta" autocomplete="username">
+    <input type="password" id="proj-login-pass" placeholder="şifre" autocomplete="current-password">
+    <button class="link-btn accent" id="proj-login-submit">Giriş yap</button>
+    <button class="link-btn" id="proj-login-cancel">Vazgeç</button>
+    <span class="form-error" id="proj-login-error">E-posta veya şifre hatalı.</span>
+  </div>
+
+  <div class="project-list" id="project-list">
+    <div class="empty-state">Projeler yükleniyor…</div>
+  </div>
+</section>
+
+<footer class="site-footer">Utku ZENGİN — Tüm hakları saklıdır.</footer>
+
+<!-- ============ MODAL: add/edit blog post ============ -->
+<div class="modal-overlay" id="modal-post">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-title" id="modal-post-title">Yeni yazı</div>
+      <button class="modal-close" id="modal-post-close">Kapat ✕</button>
+    </div>
+    <div class="field">
+      <label for="pf-title">Ana başlık</label>
+      <input type="text" id="pf-title">
+    </div>
+    <div class="field">
+      <label for="pf-desc">Açıklama</label>
+      <textarea id="pf-desc" rows="2"></textarea>
+    </div>
+    <div class="field">
+      <label for="pf-content">İçerik</label>
+      <textarea id="pf-content" rows="8"></textarea>
+    </div>
+    <div class="field">
+      <label for="pf-tags">Etiketler (virgülle ayır)</label>
+      <input type="text" id="pf-tags" placeholder="ör. yazılım, günlük">
+    </div>
+    <div class="field">
+      <label for="pf-image">Fotoğraf</label>
+      <input type="file" id="pf-image" accept="image/*">
+      <div class="field-hint">Yayınla butonuna sığmazsa bu pencereyi yukarı-aşağı kaydırabilirsin.</div>
+    </div>
+    <div class="modal-actions">
+      <span class="modal-status" id="pf-status"></span>
+      <button class="link-btn" id="pf-cancel">Vazgeç</button>
+      <button class="link-btn accent" id="pf-submit">Yayınla</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: add/edit project ============ -->
+<div class="modal-overlay" id="modal-project">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-title" id="modal-project-title">Yeni proje</div>
+      <button class="modal-close" id="modal-project-close">Kapat ✕</button>
+    </div>
+    <div class="field">
+      <label for="prf-title">Proje adı</label>
+      <input type="text" id="prf-title">
+    </div>
+    <div class="field">
+      <label for="prf-desc">Açıklama</label>
+      <textarea id="prf-desc" rows="4"></textarea>
+    </div>
+    <div class="field">
+      <label for="prf-image">Fotoğraf</label>
+      <input type="file" id="prf-image" accept="image/*">
+    </div>
+    <div class="field">
+      <label for="prf-file">İndirilebilir dosya</label>
+      <input type="file" id="prf-file">
+      <div class="field-hint">.exe, .zip vb. — indirmek için giriş gerekmez.</div>
+    </div>
+    <div class="modal-actions">
+      <span class="modal-status" id="prf-status"></span>
+      <button class="link-btn" id="prf-cancel">Vazgeç</button>
+      <button class="link-btn accent" id="prf-submit">Yayınla</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: like name prompt ============ -->
+<div class="modal-overlay" id="modal-like">
+  <div class="modal-box" style="max-width:400px;">
+    <div class="modal-head">
+      <div class="modal-title">Beğen</div>
+      <button class="modal-close" id="modal-like-close">Kapat ✕</button>
+    </div>
+    <div class="field">
+      <label for="like-name">İsmin</label>
+      <input type="text" id="like-name" placeholder="isim soyisim">
+    </div>
+    <div class="modal-actions">
+      <span class="modal-status" id="like-status"></span>
+      <button class="link-btn accent" id="like-submit">Beğen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: edit comment ============ -->
+<div class="modal-overlay" id="modal-edit-comment">
+  <div class="modal-box" style="max-width:480px;">
+    <div class="modal-head">
+      <div class="modal-title">Yorumu düzenle</div>
+      <button class="modal-close" id="modal-edit-comment-close">Kapat ✕</button>
+    </div>
+    <div class="field">
+      <label for="ec-name">İsim</label>
+      <input type="text" id="ec-name">
+    </div>
+    <div class="field">
+      <label for="ec-text">Yorum</label>
+      <textarea id="ec-text" rows="3"></textarea>
+    </div>
+    <div class="modal-actions">
+      <span class="modal-status" id="ec-status"></span>
+      <button class="link-btn" id="ec-cancel">Vazgeç</button>
+      <button class="link-btn accent" id="ec-submit">Kaydet</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/firebase-config.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
